@@ -1,0 +1,29 @@
+PS C:\Users\zubak\PycharmProjects\Module_19_6_PostgreSQL\UrbanDjango> py manage.py shell
+Python 3.12.7 (tags/v3.12.7:0b05ead, Oct  1 2024, 03:06:41) [MSC v.1941 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from task1.models import User
+>>> User.objects.all()
+<QuerySet [<User: mirzo200765@mail.ru>, <User: mirzo200705@mail.ru>, <User: mirzo201705@mail.ru>]>
+>>> User.objects.all()
+>>> User.objects.get(id=2)
+<User: mirzo200765@mail.ru>
+>>> User.objects.create(e_mail='Elena@mail.ru', age=40)
+>>> User.objects.all()
+<QuerySet [<User: mirzo200765@mail.ru>, <User: mirzo200705@mail.ru>, <User: mirzo201705@mail.ru>, <User: Elena@mail.ru>]>
+>>> User.objects.create(e_mail='Aleksandr@mail.ru', age=68)
+>>> User.objects.all()
+<QuerySet [<User: mirzo200765@mail.ru>, <User: mirzo200705@mail.ru>, <User: mirzo201705@mail.ru>, <User: Elena@mail.ru>, <User: Aleksandr@mail.ru>]>      
+>>> User.objects.get(id=4)
+<User: Elena@mail.ru>
+>>> User.objects.get(id=1)
+<User: mirzo200765@mail.ru>
+>>> User.objects.create(e_mail='Sara@mail.ru', age=30)
+>>> User.objects.all()
+<QuerySet [<User: mirzo200765@mail.ru>, <User: mirzo200705@mail.ru>, <User: mirzo201705@mail.ru>, <User: Elena@mail.ru>, <User: Aleksandr@mail.ru>, <User: Sara@mail.ru>]>
+>>> User.objects.filter(age=22)
+<QuerySet [<User: mirzo201705@mail.ru>]>
+>>> User.objects.count()     
+6
+>>> exit()
+PS C:\Users\zubak\PycharmProjects\Module_19_6_PostgreSQL\UrbanDjango>

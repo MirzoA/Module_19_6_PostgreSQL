@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends "menu.html" %}
+
+<html lang="en">
+<head>
+    {% block pagename %}
+        <meta charset="UTF-8">
+        <title>Наш магазин</title>
+        <h1>Добро пожаловать в магазин сухих строительных смесей!</h1>
+    {% endblock %}
+</head>
+<body>
+    {% block menu %}
+        {{ block.super }}
+    {% endblock %}
+
+    {% block content %}
+    <h2>Выбирайте сухих строительных смесей!</h2>
+    <ul>
+           {% for item in sukhmes %}
+                <li>{{ item }} <button>К выбору</button></li>
+            {% endfor %}
+    </ul>
+
+
+
+     {% endblock %}
+</body>
+</html>
